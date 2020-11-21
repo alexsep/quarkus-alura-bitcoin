@@ -4,12 +4,12 @@ import com.github.alexsep.model.Usuario;
 import com.github.alexsep.repositoy.UsuarioRepository;
 
 import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/usuarios")
 public class UsuarioResource {
@@ -32,11 +32,12 @@ public class UsuarioResource {
         usuarioRepository.persist(usuario);
     }
 
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public List<Usuario> findAll(){
-//        return Usuario.findAll();
-//    }
+    @GET
+    @RolesAllowed("admin")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Usuario> findAll(){
+        return usuarioRepository.listAll();
+    }
 
 
 }
