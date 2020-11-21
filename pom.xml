@@ -58,6 +58,12 @@
       <artifactId>quarkus-hibernate-orm-panache</artifactId>
     </dependency>
 
+    <!--    security-->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-security-jpa</artifactId>
+    </dependency>
+
     <!--Test-->
     <dependency>
       <groupId>io.quarkus</groupId>

@@ -3,6 +3,7 @@ package com.github.alexsep.resource;
 import com.github.alexsep.model.Usuario;
 import com.github.alexsep.repositoy.UsuarioRepository;
 
+import javax.annotation.security.PermitAll;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -18,9 +19,13 @@ public class UsuarioResource {
 
 
     @POST
+    @PermitAll
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
     public void create(Usuario usuario) {
+
+        Usuario.adicionar(usuario);
+
         usuarioRepository.persist(usuario);
     }
 
