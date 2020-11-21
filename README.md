@@ -1,8 +1,10 @@
 # bitcoin project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project was developed during the course https://cursos.alura.com.br/course/java-supersonico-subatomico-quarkus
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+## Database
+This application uses MariaDb. It is necessary to run the database scripts (https://github.com/alexsep/quarkus-alura-bitcoin/tree/master/db_scripts) before running the application.
 
 ## Running the application in dev mode
 
@@ -42,9 +44,5 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 You can then execute your native executable with: `./target/bitcoin-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-# RESTEasy JAX-RS
-
-Guide: https://quarkus.io/guides/rest-json
 
 
