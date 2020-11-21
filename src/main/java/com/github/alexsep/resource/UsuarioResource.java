@@ -14,9 +14,12 @@ import javax.ws.rs.core.MediaType;
 @Path("/usuarios")
 public class UsuarioResource {
 
-    @Inject
-    UsuarioRepository usuarioRepository;
+    private UsuarioRepository usuarioRepository;
 
+    @Inject
+    public UsuarioResource(UsuarioRepository usuarioRepository){
+        this.usuarioRepository = usuarioRepository;
+    }
 
     @POST
     @PermitAll
